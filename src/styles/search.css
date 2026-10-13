@@ -1,0 +1,62 @@
+.search-suggestions {
+  z-index: var(--jj-z-popover);
+  width: var(--radix-popover-trigger-width);
+  max-width: calc(100vw - 24px);
+  border: 1px solid var(--jj-border);
+  border-radius: var(--jj-radius-card);
+  background: var(--jj-bg);
+  box-shadow: var(--jj-shadow-hover);
+  overflow: hidden;
+  outline: none;
+  --tw-enter-scale: 1;
+  --tw-exit-scale: 1;
+}
+.search-suggestion-list {
+  height: var(--cmdk-list-height);
+  max-height: min(520px, var(--radix-popover-content-available-height));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: 8px;
+  transition: height var(--jj-duration-hover) var(--jj-ease-out);
+}
+.search-suggestion-list [cmdk-list-sizer] { padding: 6px; }
+.search-suggestion-list [cmdk-group-heading] {
+  padding: 8px 10px 4px;
+  color: var(--jj-text-secondary);
+  font-size: 11px;
+}
+.search-suggestion, .search-suggestion-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--jj-radius-control);
+  cursor: pointer;
+  color: var(--jj-text);
+}
+.search-suggestion[data-selected='true'], .search-suggestion-action[data-selected='true'] { background: var(--jj-surface-hover); }
+.search-suggestion-image {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--jj-surface);
+  color: var(--jj-text-secondary);
+}
+.search-suggestion-image--model { border-radius: 50%; }
+.search-suggestion-image--tag { background: transparent; }
+.search-suggestion-image svg { width: 17px; height: 17px; }
+.search-suggestion-text { flex: 1; min-width: 0; }
+.search-suggestion-text strong, .search-suggestion-text small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-suggestion-text strong { font-size: 13px; font-weight: 500; }
+.search-suggestion-text small { margin-top: 3px; font-size: 11px; color: var(--jj-text-secondary); }
+.search-suggestions mark { background: transparent; color: var(--jj-accent); font-weight: 600; }
+.search-message { padding: 18px 10px; font-size: 13px; color: var(--jj-text-secondary); }
+.search-suggestion-action { font-size: 12px; min-height: 36px; color: var(--jj-text-secondary); }
+.search-suggestion-action span { min-width: 0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-suggestion-action svg { flex: 0 0 14px; width: 14px; height: 14px; }
+:root[data-motion='reduced'] .search-suggestion-list { transition: none; }
+@media (prefers-reduced-motion: reduce) { .search-suggestion-list { transition: none; } }

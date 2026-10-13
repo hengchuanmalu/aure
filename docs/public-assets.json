@@ -1,0 +1,449 @@
+{
+  "scope": "Reviewed static application assets; changing or adding assets requires origin and hash review.",
+  "files": [
+    {
+      "file": "public/brand.png",
+      "sha256": "028068c1da353d4d7c83913b3061655f30fc906620c9b6ecf2b03d6553e0bd00",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "public/brand.svg",
+      "sha256": "f073a304558b1267b03a4a2b823994b6cb8ca9a64e51f6bdc80f3bc963455691",
+      "license": "MIT",
+      "origin": "Project-authored geometric SVG"
+    },
+    {
+      "file": "public/favicon.ico",
+      "sha256": "fe45d817176728b94226a969e039992a9399871631a9958ca27a79d6313c80be",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "public/media/aure-placeholder.webp",
+      "sha256": "e5415d58a7a34c2a4dbefb9129f6bb5eb8cf968015bdd2a2daf013a9602984ea",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "public/social-icons/bilibili.svg",
+      "sha256": "0b31005ccf765a9d37be2c42f1d36e44572ccadb088250626d9905ae5d4f3d21",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/bluesky.svg",
+      "sha256": "49752973164fbbf4464fbb4776f011c1eff207e5d7ad9254e031af025814eb75",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/discord.svg",
+      "sha256": "1d364b72c9eaf1fe37d17ca88cd8fb541308dc0f3b09e2ab3b824f380b3493d5",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/facebook.svg",
+      "sha256": "b06d18d844ed621b89faffb1a33440cc0ec4f1ffea9f36191f50db19a47c59a6",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/instagram.svg",
+      "sha256": "f53af2d1fc5292ba1433b5c1faf50005ce6a997fa302d1816989929f379a59dc",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/kuaishou.svg",
+      "sha256": "6fd3afc958574cf6aafafa5a4085d7903dec61d20e0ee737f632b0c815da764e",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/patreon.svg",
+      "sha256": "19b2589a0ab396e942aac60d7a8bd84b3d8c207bae1fa668c7b2f539e31decaa",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/pixiv.svg",
+      "sha256": "28c10a21f1ed08fd12e517a561b84c75bd362685f8700e40adc29c0fd15011eb",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/reddit.svg",
+      "sha256": "00e5008d56567543cf956561e61d5bf9bf629f520c7488a4d9a00164c29dd8ba",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/sinaweibo.svg",
+      "sha256": "44facf47c6bfa06c312c28acda6aa2ed404ef7f68c2897c8f33ad51b6ba94059",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/telegram.svg",
+      "sha256": "147fd8f8923e7e5f463fe98c0eb9913bead6b2ae59935728cda141002ec8a7c9",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/threads.svg",
+      "sha256": "8d4e0be28b72e417b02ae2e8f1d1ca4e3ab4adc025e6a1e2451b6d979f16d47a",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/tiktok.svg",
+      "sha256": "6f54ac8d325faacea8935bdc44cbed60206a6b408641799e5fea1cba7c1a0af7",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/twitch.svg",
+      "sha256": "dbe27bc02a01b8d89b6259cacef328c9fa70bb13c29f38c36eb1421863f6f0b6",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/x.svg",
+      "sha256": "693e68863eceb8dc9f72e2acd386ab9c20a10858dab2c076212f7084cb7a32fe",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/xiaohongshu.svg",
+      "sha256": "847cacc807f5c236031a7477381daa67fd829d89f3f80c16a547ff2efe050794",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "public/social-icons/youtube.svg",
+      "sha256": "5038808acbbc4e6edda16cbeb1cc6dec80e4e4ee4e227e039c41229fa222aa8c",
+      "license": "CC0-1.0",
+      "origin": "Simple Icons 16.3.0; see public/social-icons/SOURCE.md"
+    },
+    {
+      "file": "resources/aure-artwork.png",
+      "sha256": "41d41830f032728da7d6d0b1b1f770fe666c9e9b1b4f3990e77e009a16276c27",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "resources/aure-icon.png",
+      "sha256": "37340bb3d52f1a7a55fd945e4c733a8ca6c2938956e5ced5256953f6eadb7049",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "resources/icon.svg",
+      "sha256": "f45f2148e8e08920a13e63bf17786531904e2f30e9b1e8e8188542d11c6d09e8",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/128x128.png",
+      "sha256": "275b7c0a3e481eada75f26aa4e2348e21265e282b005994e37f1af216f6ab0d9",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/128x128@2x.png",
+      "sha256": "028068c1da353d4d7c83913b3061655f30fc906620c9b6ecf2b03d6553e0bd00",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/32x32.png",
+      "sha256": "7e32a37bdb07ce170467625d7a2eaf65368541d7d77689d0e289f0a5907322d9",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/64x64.png",
+      "sha256": "787ec55d4c3cd33127d906a595efc9c202899a273a75804eb68bf4cd43a087ca",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-hdpi/ic_launcher.png",
+      "sha256": "7b97cd29ac573200b5e94db420540f6ac48ffea159d031c06b615d3b5cd0c321",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-hdpi/ic_launcher_foreground.png",
+      "sha256": "c65b591ae11a152fa7402cf9728a0f35c5059dd63ec7f1b2328350d7d589eb23",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-hdpi/ic_launcher_round.png",
+      "sha256": "d9d184a8114dc956adb9e887441b654c90a886310efddaa0afcf7b41606dde6d",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-mdpi/ic_launcher.png",
+      "sha256": "86bf08651d5011af9ae1f2731c7c59e87b382708f2573f9dd7a991971747dc77",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-mdpi/ic_launcher_foreground.png",
+      "sha256": "b90cddc3fe3f55a068fa005e53526e7684901c1854f9d5d647e3beff5b321902",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-mdpi/ic_launcher_round.png",
+      "sha256": "5dc0ac1c1ab724cfbb72fc880137c11559bb51f0215f9382319da1e32057bf5c",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "12d6369ea189ec04d77059abca9d9e36355ef33d3db70cca153b2bb985ac1941",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher_foreground.png",
+      "sha256": "bcde2f5cbd5738c3c2949097b69ec13feb671f4637ff68596898b9ad40d92bc0",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xhdpi/ic_launcher_round.png",
+      "sha256": "eb20d4bb71552bae43a6410d5b37062a5a4427aced845a4bda65c51c256a3fc3",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "9bfd355aa787f213307e13cf7e439bccfff17f79798aa6cbe390972a11ded5a5",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "sha256": "58e8fa0b961af36013d97b268f110e82702c83b844b69c4c207598117c6e8961",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_round.png",
+      "sha256": "38a4f6d3af915d1522a1f9d6e9327620f8c619a4194c9f33af7c3ce9711d39f4",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "bd697f4da0ca6910d3d6e4298778babc5f28cbf873d76c07f1aa5e753f15c444",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "sha256": "26e2f180cefc472d37900e68dace72cad7eccd1666493c27238c22b0149ec32a",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_round.png",
+      "sha256": "abdf7256172774099f2845e61a5a67492158e3e41bfa64b53b440abd38e9af6d",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/icon.icns",
+      "sha256": "c045bb0195a9fdad3aedde1a4b84b9e9030fabbf90fa6cfc089f8e9d30264866",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/icon.ico",
+      "sha256": "fe45d817176728b94226a969e039992a9399871631a9958ca27a79d6313c80be",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/icon.png",
+      "sha256": "37340bb3d52f1a7a55fd945e4c733a8ca6c2938956e5ced5256953f6eadb7049",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-20x20@1x.png",
+      "sha256": "05c34df67526c2d0474cc0d3c179af6aa65348613fbbef6eb047adfbd16fd3ad",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-20x20@2x-1.png",
+      "sha256": "64a2885f23e89fa3812239b3aa4b3db7282e52407a76e418717cede5e913bd8e",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-20x20@2x.png",
+      "sha256": "64a2885f23e89fa3812239b3aa4b3db7282e52407a76e418717cede5e913bd8e",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-20x20@3x.png",
+      "sha256": "102dcfe58b5343598c0bddd60b7cbd1bc3658e07516693ab8c1c262f36685671",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-29x29@1x.png",
+      "sha256": "1592ef1ead6113ee25971fb66c716d18c87a9509c671352da0c1bea9b41315e4",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-29x29@2x-1.png",
+      "sha256": "5a60cdcbed49a58c80bb8606801b320bc201c21c3b81e0e4a14defb112e14299",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-29x29@2x.png",
+      "sha256": "5a60cdcbed49a58c80bb8606801b320bc201c21c3b81e0e4a14defb112e14299",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-29x29@3x.png",
+      "sha256": "32d0b14488001411b3228c1afc0fce9955da0e297778aa3195967f785c7475be",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-40x40@1x.png",
+      "sha256": "64a2885f23e89fa3812239b3aa4b3db7282e52407a76e418717cede5e913bd8e",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-40x40@2x-1.png",
+      "sha256": "8ebc27ae7390eb09a4e16b19740df533e0983dc5ab2e1e6c030632c52b239c3e",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-40x40@2x.png",
+      "sha256": "8ebc27ae7390eb09a4e16b19740df533e0983dc5ab2e1e6c030632c52b239c3e",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-40x40@3x.png",
+      "sha256": "5955529be74961ab2750e40660c0745a6c66bf485a94aa3879b2f3134a726691",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-512@2x.png",
+      "sha256": "ceb9efd802628fc2690c1c5aa8562181429c9f4b1114c0e11c72bf4eb17c4caf",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-60x60@2x.png",
+      "sha256": "5955529be74961ab2750e40660c0745a6c66bf485a94aa3879b2f3134a726691",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-60x60@3x.png",
+      "sha256": "e55d826127c92cedbe0be755a18c6727942b611b108ef178fe25a895168a6776",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-76x76@1x.png",
+      "sha256": "1b2cc53212b8ef5d8bce7bc8032d56e8c6d25d400e18e185fb96c5f66f1d8791",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-76x76@2x.png",
+      "sha256": "4d15c41c66cd266ae722f9dcbc2e19dd43a32e51ef95a64164338f7faeb420e5",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/ios/AppIcon-83.5x83.5@2x.png",
+      "sha256": "80b887dc3050328488e81917d15fdfe21b09a1a4387b25138fe1c58d4d9eb543",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square107x107Logo.png",
+      "sha256": "af3a1d7303beabed2fd03cb523af2c1589edd9b2d0a0c91d935bc2541b3b2a39",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square142x142Logo.png",
+      "sha256": "222747c4376c8c855463e2b7be32983cb4f212d88ea77376a8b37a7ecdfe82fe",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square150x150Logo.png",
+      "sha256": "c60115997547f97a5d301c2bb03c88ffb4d3a6c387ab15291f16107c0127387f",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square284x284Logo.png",
+      "sha256": "adab38c7b9e0384ad67ffca33e06484d29cb1a60c015723665abfabc9516fd49",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square30x30Logo.png",
+      "sha256": "aa010f606f590ef01f235ab70f42e11ccd16200aac478204c8bb55eb95512479",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square310x310Logo.png",
+      "sha256": "a1209f2527295872dbc6caa4daa3ba6e6d267e01ee21dabe7ccabec5dbe1a6bf",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square44x44Logo.png",
+      "sha256": "a6aa761e1daec0e6867da1a16818e788d964b67b451dfd6d598274068e4c5939",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square71x71Logo.png",
+      "sha256": "d109487ef884a672f150a3b1d3905518a6be121e9c0e7fdb7731e338f69e3c46",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/Square89x89Logo.png",
+      "sha256": "1362c93eae51d1d7be3b70c12e942780fb177643f350f18f2850fe81e9765dcd",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    },
+    {
+      "file": "src-tauri/icons/StoreLogo.png",
+      "sha256": "98be6e0dfbd47003515b281228b01ff372762e52fd2affc160512c5f47232a4f",
+      "license": "MIT",
+      "origin": "Project-specific imagegen artwork or derived icon/placeholder; recorded in local artwork prompt and project source"
+    }
+  ]
+}

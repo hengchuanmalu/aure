@@ -1,0 +1,26 @@
+{
+  "albums": [
+    { "id": "exact", "name": "林夏" },
+    { "id": "prefix", "name": "林夏写真" },
+    { "id": "contains", "name": "夏日林夏" },
+    { "id": "related", "name": "海边漫游", "modelIds": ["model"] },
+    { "id": "loose", "name": "林间的夏天" },
+    { "id": "number", "name": "编号测试", "number": "009" },
+    { "id": "long-number", "name": "编号扩展", "number": "1009" },
+    { "id": "gapped-number", "name": "编号间隔", "number": "0-0-9" },
+    { "id": "acronym", "name": "Summer Blue Ocean" },
+    { "id": "astral", "name": "🌸花园" }
+  ],
+  "models": [{ "id": "model", "name": "林夏", "alias": "SeYa" }],
+  "tags": [{ "id": "tag", "name": "林夏", "groupId": "group" }],
+  "cases": [
+    { "query": "林夏", "ids": ["exact", "model", "tag", "prefix", "contains", "related", "loose"] },
+    { "query": "００９", "ids": ["number", "long-number"] },
+    { "query": "seya", "ids": ["model"] },
+    { "query": "海边 林夏", "ids": ["related"] },
+    { "query": "sbo", "ids": ["acronym"] },
+    { "query": "🌸", "ids": ["astral"] },
+    { "query": "不存在的内容", "ids": [] },
+    { "query": "　 ", "ids": [] }
+  ]
+}

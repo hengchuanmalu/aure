@@ -1,0 +1,42 @@
+.background-editor-modal .dialog-content { scrollbar-width: none; }
+.background-editor-modal .dialog-content::-webkit-scrollbar { display: none; }
+.profile-editor-background { min-height: 0; }
+.background-editor { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 26px; height: min(620px, calc(100dvh - 280px)); }
+.background-preview-panel { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.background-preview-panel > :not(.background-crop-frame) { flex-shrink: 0; }
+.background-crop-frame { flex: 1; min-height: 100px; display: grid; place-items: center; container-type: size; }
+.background-crop-stage { position: relative; width: min(100cqw, calc(100cqh * 16 / 9)); aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--jj-radius-card); background: var(--jj-surface); cursor: grab; touch-action: none; user-select: none; }
+.background-crop-stage:active { cursor: grabbing; }
+.background-crop-stage:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+.background-crop-stage > :is(img, .photo-frame), .background-crop-stage > .photo-fallback { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; pointer-events: none; }
+.background-crop-grid { position: absolute; inset: 0; pointer-events: none; }
+.background-crop-grid::before { content: ''; position: absolute; inset: 0 33.333%; border-inline: 1px solid #ffffff50; }
+.background-crop-grid::after { content: ''; position: absolute; inset: 33.333% 0; border-block: 1px solid #ffffff50; }
+.background-zoom-label { font-size: 12px; color: var(--jj-text-secondary); margin-right: 8px; }
+.background-effect-heading { font-size: 16px; margin: 24px 0 12px; }
+.background-page-effect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); overflow: hidden; border: 1px solid var(--jj-border); border-radius: var(--jj-radius-card); }
+.background-page-effect .model-background { aspect-ratio: 16 / 9; }
+.background-effect-info { display: flex; align-items: center; gap: 12px; padding: 14px; min-width: 0; }
+.background-effect-info .model-avatar { width: 52px; height: 52px; }
+.background-effect-info > div { min-width: 0; }
+.background-effect-info strong { display: block; font-size: 15px; overflow-wrap: anywhere; }
+.background-effect-info span { font-size: 12px; color: var(--jj-text-secondary); }
+.model-background { overflow: hidden; background: var(--jj-surface); }
+.model-background > :is(img, .photo-frame), .model-background > .photo-fallback { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+.background-selection-panel { padding-left: 26px; min-height: 0; }
+.background-editor .avatar-photo-scroll { --avatar-photo-columns: 3; height: 0; min-height: 100px; max-height: none; flex: 1; }
+.background-editor .avatar-photo, .background-editor .avatar-photo-placeholder { aspect-ratio: 1.4; }
+.background-albums { display: flex; gap: 8px; overflow-x: auto; align-items: center; padding: 2px 2px 10px; margin: -2px -2px 4px; scrollbar-width: thin; }
+.background-editor .background-albums .avatar-source { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.background-picker-empty { flex: 1; min-height: 100px; display: grid; place-items: center; color: var(--jj-text-secondary); font-size: 12px; }
+@media (max-width: 850px) {
+  .background-editor { gap: 20px; }
+  .background-selection-panel { padding-left: 20px; }
+}
+@media (max-width: 620px) {
+  .background-editor { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; height: auto; }
+  .background-crop-frame { flex: none; aspect-ratio: 16 / 9; container-type: normal; }
+  .background-crop-stage { width: 100%; }
+  .background-editor .avatar-photo-scroll { flex: none; height: 300px; }
+  .background-selection-panel { border-left: 0; border-top: 1px solid var(--jj-border); padding: 20px 0 0; }
+}

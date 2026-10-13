@@ -1,0 +1,82 @@
+{
+  "/tests/fixtures/media/p-1239291.jpg": {
+    "height": 1067,
+    "size": 114254,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1536619.jpg": {
+    "height": 1067,
+    "size": 113594,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1382731.jpg": {
+    "height": 2400,
+    "size": 190266,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1462637.jpg": {
+    "height": 1067,
+    "size": 112489,
+    "width": 1600
+  },
+  "/tests/fixtures/media/flower.jpg": {
+    "height": 540,
+    "size": 52583,
+    "width": 960
+  },
+  "/tests/fixtures/media/p-1036623.jpg": {
+    "height": 1068,
+    "size": 108968,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1542085.jpg": {
+    "height": 1110,
+    "size": 116653,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1858175.jpg": {
+    "height": 2400,
+    "size": 190029,
+    "width": 1600
+  },
+  "/tests/fixtures/media/flower-portrait.mp4": {
+    "height": 540,
+    "size": 380579,
+    "width": 304
+  },
+  "/tests/fixtures/media/p-733872.jpg": {
+    "height": 1067,
+    "size": 111902,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-1553783.jpg": {
+    "height": 2647,
+    "size": 218260,
+    "width": 1600
+  },
+  "/tests/fixtures/media/flower-portrait.jpg": {
+    "height": 540,
+    "size": 32425,
+    "width": 304
+  },
+  "/tests/fixtures/media/p-1181686.jpg": {
+    "height": 2400,
+    "size": 206576,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-762020.jpg": {
+    "height": 1067,
+    "size": 115813,
+    "width": 1600
+  },
+  "/tests/fixtures/media/p-774909.jpg": {
+    "height": 2400,
+    "size": 192339,
+    "width": 1600
+  },
+  "/tests/fixtures/media/flower.mp4": {
+    "height": 540,
+    "size": 909151,
+    "width": 960
+  }
+}

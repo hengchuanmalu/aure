@@ -1,0 +1,70 @@
+.album-content-toolbar {
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.album-content-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: auto;
+  max-width: 100%;
+}
+.media-view-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.media-column-control {
+  display: flex;
+  align-items: center;
+}
+.media-column-control input {
+  width: 112px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+.media-mode-control {
+  display: flex;
+  gap: 3px;
+  border-radius: var(--jj-radius-control);
+  padding: 3px;
+  background: var(--jj-surface);
+}
+.media-mode-control .jj-button {
+  padding: 0;
+  color: var(--jj-text-secondary);
+}
+.media-mode-control .jj-button[aria-pressed="true"] {
+  color: var(--jj-text);
+  background: var(--jj-bg);
+  box-shadow: var(--jj-shadow-card);
+}
+.media-layout {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+  overflow-anchor: none;
+}
+.media-layout-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 0;
+}
+.media-layout-item > .media-card {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: var(--jj-radius-control);
+}
+.media-layout-item img:not([src]) {
+  visibility: hidden;
+}
+@media (max-width: 800px) {
+  .album-content-actions {
+    margin-left: auto;
+  }
+}

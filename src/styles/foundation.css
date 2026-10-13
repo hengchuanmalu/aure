@@ -1,0 +1,153 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@source "../**/*.{ts,tsx}";
+
+/* Project defaults, shared with the gallery tokens. Light content-first UI. */
+:root {
+  --jj-dialog-header-height: 48px;
+  --jj-dialog-actions-height: 56px;
+  --jj-dialog-bar-inset: 24px;
+  --jj-dialog-bar-control-height: 32px;
+  --background: var(--jj-bg);
+  --foreground: var(--jj-text);
+  --card: var(--jj-bg);
+  --card-foreground: var(--jj-text);
+  --popover: var(--jj-bg);
+  --popover-foreground: var(--jj-text);
+  --primary: var(--jj-accent);
+  --primary-foreground: #fff;
+  --secondary: var(--jj-surface);
+  --secondary-foreground: var(--jj-text);
+  --muted: var(--jj-surface);
+  --muted-foreground: var(--jj-text-secondary);
+  --accent: var(--jj-surface-hover);
+  --accent-foreground: var(--jj-text);
+  --destructive: var(--jj-danger);
+  --border: var(--jj-border);
+  --input: var(--jj-border);
+  --ring: #737373;
+  --radius: var(--jj-radius-control);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+.search-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  width: min(100%, 360px);
+  padding: 0 12px;
+  border: 1px solid var(--jj-border);
+  border-radius: var(--jj-radius-control);
+  background: var(--jj-bg);
+}
+.search-input:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.search-input [data-slot="input"] {
+  padding-inline: 0;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  min-width: 0;
+}
+.search-input [data-slot="input"]:focus-visible {
+  box-shadow: none;
+}
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+}
+.checkbox-field label {
+  cursor: pointer;
+  line-height: 1.5;
+}
+[data-slot="dialog-overlay"],
+[data-slot="alert-dialog-overlay"] {
+  background: var(--jj-overlay);
+  z-index: 150;
+}
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"] {
+  z-index: 150;
+}
+[data-slot="dropdown-menu-content"] {
+  z-index: 160;
+}
+.select-field {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 36px; max-width: 100%; padding: 7px 12px;
+  color: var(--jj-text); background: var(--jj-bg); border: 1px solid var(--jj-border);
+  border-radius: var(--jj-radius-control); font-size: 14px;
+}
+.select-field > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.select-field .lucide { width: 16px; height: 16px; }
+.select-field:hover, .select-field[data-state="open"] { background: var(--jj-surface); }
+.sort-menu {
+  min-width: max(200px, var(--radix-dropdown-menu-trigger-width)); padding: 5px;
+  background: var(--jj-bg); color: var(--jj-text); border: 1px solid var(--jj-border);
+  border-radius: var(--jj-radius-control); box-shadow: 0 8px 28px rgb(36 44 58 / 12%);
+}
+.sort-option { justify-content: space-between; min-height: 36px; padding: 6px 10px; font-size: 14px; cursor: pointer; }
+.sort-option[aria-checked="true"] { background: var(--jj-surface); font-weight: 600; }
+.sort-option[data-highlighted] { background: var(--jj-surface-hover); }
+.sort-arrow { display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; flex: 0 0 auto; transform-origin: center; transition: transform var(--jj-duration-panel) ease-in-out; }
+.sort-option .sort-arrow svg { width: 16px; height: 16px; color: var(--jj-text); }
+.settings-link { border-radius: var(--jj-radius-control); }
+.settings-link:hover { background: var(--jj-surface); }
+.model-index-zone {
+  position: fixed; z-index: 24; right: 12px; top: 112px; bottom: 24px;
+  display: flex; align-items: flex-start; padding: 0 6px;
+}
+.model-index {
+  display: flex; flex-direction: column; max-height: calc(100dvh - 136px); overflow-y: auto;
+  padding: 7px 4px; border: 1px solid var(--jj-border); border-radius: 16px;
+  background: var(--jj-bg); box-shadow: 0 4px 20px rgb(36 44 58 / 8%);
+}
+.model-index button {
+  flex-shrink: 0; width: 26px; height: clamp(16px, calc((100dvh - 152px) / 27), 21px); padding: 0; border-radius: 5px;
+  font-size: 11px; line-height: 1; background: transparent; color: var(--jj-text-secondary);
+}
+.model-index button:disabled { opacity: .25; }
+.model-index button:hover:not(:disabled), .model-index button[aria-pressed="true"] {
+  background: var(--jj-surface-hover); color: var(--jj-text); font-weight: 600;
+}
+[data-reduced-motion="true"] .sidebar nav a::before { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .sidebar nav a::before, .model-index { transition: none; }
+  .model-index { transform: none; }
+}

@@ -1,0 +1,207 @@
+.modal.wide {
+  width: var(--jj-dialog-wide-width);
+  max-width: calc(100vw - var(--jj-dialog-viewport-inset));
+}
+@media (max-width: 760px) {
+  :root { --jj-dialog-viewport-inset: 24px; }
+}
+.tag-group .section-title {
+  flex-wrap: wrap;
+}
+@media (min-width: 1600px) {
+  .album-grid,
+  .media-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1199px) {
+  .album-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .album-grid.cover-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .sidebar {
+    width: var(--jj-sidebar-compact);
+    padding-inline: 6px;
+  }
+  .main-column {
+    margin-left: var(--jj-sidebar-compact);
+  }
+  .page-pad {
+    padding: 12px 24px 36px;
+  }
+  .topbar {
+    padding-inline: 24px;
+    gap: 16px;
+  }
+  .featured-grid {
+    gap: 12px;
+  }
+  .model-hero {
+    margin-inline: 28px;
+    gap: 28px;
+  }
+  .model-hero {
+    row-gap: 24px;
+  }
+}
+@media (max-width: 800px) {
+  .library-page .model-filters,
+  .discovery > .model-filters {
+    position: static;
+  }
+  .shelf-grid,
+  .album-grid.cover-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .album-shelf .section-title {
+    flex-wrap: wrap;
+  }
+  .shell {
+    padding: 0;
+  }
+  .main-column {
+    border-radius: 0;
+  }
+  .topbar {
+    padding: 12px 20px;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .location-label {
+    display: none;
+  }
+  .search-form {
+    margin: 0;
+  }
+  .search-form kbd {
+    display: none;
+  }
+  .page-pad {
+    padding: 20px;
+  }
+  .page-heading {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .collection-note {
+    display: none;
+  }
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .featured-grid > .album-card {
+    aspect-ratio: 3 / 2;
+  }
+  .featured-grid > .album-card:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+    aspect-ratio: 2;
+  }
+  .featured-grid.few-items {
+    height: auto;
+  }
+  .featured-grid.few-items > .album-card:first-child {
+    grid-column: auto;
+    aspect-ratio: 3 / 2;
+  }
+  .album-grid,
+  .media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .model-hero {
+    margin: 24px 20px 20px;
+    column-gap: 24px;
+  }
+  .model-identity .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .model-identity { gap: 16px; }
+  .profile-editor {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+  .tag-group {
+    padding: 20px;
+  }
+}
+@media (max-width: 540px) {
+  .model-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .model-backdrop {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+  .shelf-grid,
+  .album-grid.cover-grid {
+    grid-template-columns: 1fr;
+  }
+  .album-fan {
+    height: 205px;
+    max-width: 260px;
+  }
+  .collection-context {
+    flex-wrap: wrap;
+  }
+  .collection-context > a {
+    margin: 0 0 16px;
+  }
+  .sidebar {
+    width: 66px;
+  }
+  .main-column {
+    margin-left: 66px;
+  }
+  .sidebar nav a {
+    min-height: 58px;
+  }
+  .topbar-action-group > .jj-button {
+    font-size: 12px;
+    width: 132px;
+    justify-self: end;
+  }
+  .topbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .album-grid,
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-heading .row {
+    flex-wrap: wrap;
+  }
+  .page-heading .library-toolbar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .profile-editor {
+    grid-template-columns: 1fr;
+  }
+  .editor-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .profile-editor:not(.profile-editor-avatar) .editor-tabs {
+    flex-wrap: nowrap;
+  }
+  .modal {
+    --jj-dialog-bar-inset: 20px;
+  }
+  .dialog-layout {
+    max-height: calc(88vh - 2px);
+  }
+  .dialog-content { padding: 20px; }
+  .info-panel {
+    width: min(360px, 100vw);
+  }
+  .album-overlay .chips {
+    display: none;
+  }
+}

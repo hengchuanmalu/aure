@@ -1,0 +1,499 @@
+/* Stacked albums: transforms belong to the leaves, never to media previews. */
+.retained-original-photo { display: block; width: 100%; height: 100%; }
+.album-card--stack {
+  aspect-ratio: auto;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 12px;
+}
+.album-card--stack:hover,
+.album-card--stack:focus-within {
+  box-shadow: none;
+}
+.album-card--stack .cover-link {
+  overflow: visible;
+  padding: 10px 8px 14px;
+}
+.album-fan {
+  position: relative;
+  width: 84%;
+  max-width: 250px;
+  height: clamp(160px, 15vw, 215px);
+  margin: 0 auto 16px;
+  perspective: 900px;
+}
+.fan-leaf,
+.fan-front {
+  position: absolute;
+  width: 56%;
+  height: 92%;
+  top: 4%;
+  left: 22%;
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--jj-surface-hover);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
+  transform-origin: 50% 90%;
+  transition:
+    transform var(--jj-duration-fan) var(--jj-ease-exhibition),
+    box-shadow var(--jj-duration-page);
+  pointer-events: none;
+}
+.fan-front-layout {
+  position: absolute;
+  width: 56%;
+  height: 92%;
+  top: 4%;
+  left: 22%;
+  z-index: 3;
+  border-radius: 11px;
+}
+.fan-front-layout .fan-front {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.album-fan img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+.fan-leaf {
+  border: 2px solid var(--jj-bg);
+}
+.leaf-0 {
+  transform: translateX(-32%) rotate(-9deg) scale(0.89);
+  z-index: 2;
+}
+.leaf-1 {
+  transform: translateX(32%) rotate(9deg) scale(0.89);
+  z-index: 2;
+}
+.leaf-2 {
+  transform: translateX(-47%) rotate(-16deg) scale(0.78);
+  z-index: 1;
+}
+.leaf-3 {
+  transform: translateX(47%) rotate(16deg) scale(0.78);
+  z-index: 1;
+}
+.fan-front {
+  z-index: 3;
+  box-shadow: 0 5px 16px rgb(0 0 0 / 14%);
+}
+.album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+  .fan-front {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 9px 22px rgb(0 0 0 / 15%);
+}
+.album-card--stack:is(:hover, :focus-within, [data-menu-open="true"]) .leaf-0 {
+  transform: translateX(-43%) rotate(-14deg) scale(0.9);
+}
+.album-card--stack:is(:hover, :focus-within, [data-menu-open="true"]) .leaf-1 {
+  transform: translateX(43%) rotate(14deg) scale(0.9);
+}
+.album-card--stack:is(:hover, :focus-within, [data-menu-open="true"]) .leaf-2 {
+  transform: translateX(-59%) rotate(-22deg) scale(0.8);
+}
+.album-card--stack:is(:hover, :focus-within, [data-menu-open="true"]) .leaf-3 {
+  transform: translateX(59%) rotate(22deg) scale(0.8);
+}
+.album-caption {
+  text-align: center;
+}
+.album-caption h3 {
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.album-caption .card-bottom {
+  justify-content: center;
+  margin-top: 3px;
+  color: var(--jj-text-secondary);
+  font-size: 12px;
+}
+.album-caption .card-bottom small {
+  margin: 0;
+}
+.album-caption .caption-favorite {
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+}
+.album-caption .chips {
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.album-caption .chip {
+  font-size: 11px;
+  padding: 0 5px;
+  background: transparent;
+  color: var(--jj-text-secondary);
+}
+.album-card--stack .album-overlay {
+  inset: 0 2px auto auto;
+  padding: 0;
+  background: none;
+  border-radius: 8px;
+  color: var(--jj-text);
+  z-index: 5;
+}
+.album-card--stack .album-overlay .card-bottom {
+  margin: 0;
+  gap: 0;
+  background: white;
+  border: 1px solid var(--jj-border);
+  border-radius: 8px;
+  box-shadow: var(--jj-shadow-card);
+}
+.album-card--stack .album-overlay .jj-button {
+  color: var(--jj-text-secondary);
+  width: 30px;
+  height: 30px;
+}
+.album-card--stack .album-overlay .jj-button:hover {
+  background: var(--jj-surface-hover);
+  color: var(--jj-text);
+}
+.album-card[data-menu-open="true"] .album-overlay {
+  opacity: 1;
+}
+.album-card--cover .album-overlay {
+  opacity: 1;
+  padding-top: 42px;
+}
+.album-card--cover .album-overlay .chips {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity var(--jj-duration-hover);
+}
+.album-card--cover:is(:hover, :focus-within) .album-overlay .chips {
+  opacity: 1;
+  max-height: 32px;
+}
+.album-card--cover .cover-link img {
+  transition: transform var(--jj-duration-cover) var(--jj-ease-exhibition);
+}
+.album-card--cover:is(:hover, :focus-within) .cover-link img {
+  transform: scale(1.035);
+}
+.album-card--cover .album-overlay h3 {
+  font-size: 15px;
+}
+.featured-grid > .album-card--cover:first-child .album-overlay h3 {
+  font-size: 23px;
+  position: relative;
+  /* Align the larger glyphs' lower edge with the adjacent small titles. */
+  top: -5px;
+}
+.featured-grid {
+  --featured-action-height: 36px;
+  --featured-bottom-inset: 6px;
+}
+.featured-grid .album-overlay {
+  padding-bottom: var(--featured-bottom-inset);
+}
+.featured-grid .featured-caption {
+  position: absolute;
+  bottom: var(--featured-bottom-inset);
+  left: 18px;
+  right: 94px;
+  height: 72px;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+.featured-caption h3 {
+  width: 100%;
+  height: var(--featured-action-height);
+  line-height: var(--featured-action-height);
+  margin-bottom: 0;
+  transition: transform var(--jj-duration-panel) var(--jj-ease-exhibition);
+}
+.featured-caption small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--jj-duration-hover), transform var(--jj-duration-panel);
+}
+.featured-caption:is(:hover, :focus-visible) h3 {
+  transform: translateY(-20px);
+}
+.featured-caption:is(:hover, :focus-visible) small {
+  opacity: 1;
+  transform: translateY(0);
+}
+.featured-grid .card-bottom {
+  justify-content: flex-end;
+}
+.featured-grid .card-bottom .jj-button {
+  height: var(--featured-action-height);
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-caption h3,
+  .featured-caption small { transition: none; }
+}
+[data-reduced-motion="true"] .featured-caption h3,
+[data-reduced-motion="true"] .featured-caption small { transition: none; }
+.filter-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: var(--jj-radius-pill);
+  background: #27272a;
+}
+.library-page .model-filters,
+.discovery > .model-filters {
+  position: sticky;
+  top: 58px;
+  z-index: 18;
+  background: var(--jj-bg);
+  padding-block: 10px;
+}
+.entity-chip.active:hover {
+  background: transparent;
+}
+.entity-chip.active .entity-name {
+  color: inherit;
+}
+.people-section,
+.album-shelf {
+  margin: 28px 0;
+}
+.people-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 0 10px;
+  scrollbar-width: thin;
+}
+.people-strip .model-card {
+  padding: 0 8px;
+  width: 94px;
+  min-width: 94px;
+  gap: 5px;
+}
+.people-strip .model-card img {
+  width: 62px;
+  height: 62px;
+  box-shadow: none;
+}
+.people-strip .model-card strong {
+  font-size: 12px;
+  margin-top: 3px;
+}
+.people-strip .model-card small {
+  font-size: 11px;
+}
+.model-card img {
+  transition: transform var(--jj-duration-panel) var(--jj-ease-exhibition);
+}
+.model-card:is(:hover, :focus-visible) img {
+  transform: translateY(-3px);
+}
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.shelf-rail {
+  position: relative;
+  gap: 22px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.shelf-rail > .shelf-grid {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.view-switch {
+  display: flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 9px;
+  background: var(--jj-surface);
+}
+.view-switch .jj-button {
+  width: 30px;
+  height: 30px;
+  color: var(--jj-text-secondary);
+}
+.view-switch [aria-pressed="true"] {
+  background: white;
+  color: var(--jj-text);
+  box-shadow: 0 1px 4px #0001;
+}
+.cover-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+.cover-grid .album-card {
+  aspect-ratio: 3 / 4;
+}
+.album-card--morph .fan-leaf {
+  transition:
+    transform var(--jj-duration-panel) var(--jj-ease-out),
+    opacity var(--jj-duration-panel) var(--jj-ease-out);
+}
+.album-card--cover .album-fan--morph {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  perspective: none;
+}
+.album-card--cover .album-fan--morph .fan-front-layout {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.album-card--cover .album-fan--morph .fan-front {
+  border-radius: inherit;
+  box-shadow: none;
+}
+.album-card--cover .album-fan--morph .fan-leaf {
+  transform: translateX(0) rotate(0) scale(0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform var(--jj-duration-panel) var(--jj-ease-out),
+    opacity var(--jj-duration-panel) var(--jj-ease-out),
+    visibility 0s var(--jj-duration-panel);
+}
+.album-card--morph .album-fan { border-radius: inherit; }
+.album-card--morph.album-card--cover .album-overlay { z-index: 5; }
+.album-card--morph .fan-front { container-type: size; }
+/* A fixed image aspect ratio lets Motion correct the frame's unequal scales. */
+.fan-photo-plane { position: absolute; border-radius: 0; }
+.fan-photo-plane .photo-frame { overflow: visible; }
+.cover-grid .album-card--cover {
+  transition:
+    transform var(--jj-duration-hover) var(--jj-ease-out),
+    box-shadow var(--jj-duration-hover) var(--jj-ease-out);
+}
+.cover-grid .album-card--cover .album-overlay h3 {
+  margin-bottom: 0;
+}
+.cover-grid .album-card--cover .card-bottom {
+  margin-top: 0;
+}
+/* Revealed tags must not separate the title from its media count. */
+.cover-grid .album-card--cover .album-overlay .chips {
+  order: -1;
+}
+/* Scale the complete card once, keeping the cover crop and caption together. */
+.cover-grid .album-card--cover .cover-link img {
+  transform: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cover-grid .album-card--cover:hover {
+    transform: scale(var(--jj-album-hover-scale));
+  }
+}
+.cover-grid .album-card--cover:focus-within {
+  transform: scale(var(--jj-album-hover-scale));
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-grid .album-card--cover:is(:hover, :focus-within) {
+    transform: none;
+  }
+}
+:root[data-motion="reduced"] .cover-grid .album-card--cover,
+[data-reduced-motion="true"] .cover-grid .album-card--cover {
+  transform: none;
+}
+.library-results {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.library-results small {
+  color: var(--jj-text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+}
+.collection-context {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  overflow: hidden;
+}
+.collection-context > :is(img, .photo-frame) {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-block: 8px 24px;
+}
+.collection-context > div {
+  min-width: 0;
+  padding-bottom: 16px;
+}
+.collection-context h2 {
+  font-size: 22px;
+}
+.collection-context p {
+  font-size: 12px;
+  color: var(--jj-text-secondary);
+}
+.collection-context > a {
+  margin-left: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+    .fan-front {
+    transform: none;
+  }
+  .album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+    .leaf-0 {
+    transform: translateX(-32%) rotate(-9deg) scale(0.89);
+  }
+  .album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+    .leaf-1 {
+    transform: translateX(32%) rotate(9deg) scale(0.89);
+  }
+  .album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+    .leaf-2 {
+    transform: translateX(-47%) rotate(-16deg) scale(0.78);
+  }
+  .album-card--stack:is(:hover, :focus-within, [data-menu-open="true"])
+    .leaf-3 {
+    transform: translateX(47%) rotate(16deg) scale(0.78);
+  }
+  .album-card--cover:is(:hover, :focus-within) .cover-link img,
+  .model-card:is(:hover, :focus-visible) img {
+    transform: none;
+  }
+}
+[data-reduced-motion="true"] .album-card--stack .fan-front {
+  transform: none;
+}
+[data-reduced-motion="true"] .album-card--stack .leaf-0 {
+  transform: translateX(-32%) rotate(-9deg) scale(0.89);
+}
+[data-reduced-motion="true"] .album-card--stack .leaf-1 {
+  transform: translateX(32%) rotate(9deg) scale(0.89);
+}
+[data-reduced-motion="true"] .album-card--stack .leaf-2 {
+  transform: translateX(-47%) rotate(-16deg) scale(0.78);
+}
+[data-reduced-motion="true"] .album-card--stack .leaf-3 {
+  transform: translateX(47%) rotate(16deg) scale(0.78);
+}
+[data-reduced-motion="true"] .album-card--cover .cover-link img,
+[data-reduced-motion="true"] .model-card img {
+  transform: none;
+}

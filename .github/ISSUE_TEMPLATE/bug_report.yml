@@ -1,0 +1,25 @@
+name: 问题反馈
+description: 报告可复现的问题
+body:
+  - type: markdown
+    attributes:
+      value: 请使用合成素材复现，勿上传个人写真、数据库或凭据。安全漏洞请参阅 SECURITY.md。
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      description: aure 版本、Windows / WebView2 版本，或浏览器及运行方式。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 描述操作顺序、预期行为和实际结果。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 日志或截图
+      description: 请先去除真实文件路径和个人信息。

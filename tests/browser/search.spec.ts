@@ -1,0 +1,128 @@
+import { test, expect } from '../support/browser.fixture';
+
+const input = (page: import('@playwright/test').Page) => page.getByRole('combobox', { name: '搜索写真、模特或标签' });
+test('suggestions stay below the input, keep focus, and open each entity type', async ({ page }) => {
+  await page.goto('/#/library');
+  const search = input(page);
+  await search.fill('林夏');
+  const panel = page.locator('.search-suggestions');
+  await expect(panel.locator('[cmdk-item]').filter({ hasText: '林夏' }).first()).toBeVisible();
+  await expect(search).toBeFocused();
+  await expect(search).toHaveAttribute('aria-expanded', 'true');
+  const anchor = await page.locator('.catalog-search-anchor').boundingBox();
+  const popup = await panel.boundingBox();
+  expect(Math.abs(popup!.width - anchor!.width)).toBeLessThan(2);
+  expect(popup!.y).toBeGreaterThanOrEqual(anchor!.y + anchor!.height);
+  expect(await panel.locator('[cmdk-item]').count()).toBeLessThanOrEqual(9);
+  await expect.poll(async () => (await panel.boundingBox())?.height || 0).toBeGreaterThan(150);
+  await expect(panel).toHaveCSS('opacity', '1');
+  await expect(panel.locator('[cmdk-item][aria-selected="true"]')).toHaveCount(0);
+  await page.screenshot({ path: 'verification/search-browser.png' });
+  await panel.locator('[data-value="model:m0"]').click();
+  await expect(page).toHaveURL(/#\/models\/m0$/);
+  await expect(page.locator('h1')).toHaveText('林夏');
+  await search.fill('城市');
+  await expect(panel.locator('[data-value="tag:t10"]')).toBeVisible();
+  await panel.locator('[data-value="tag:t10"]').click();
+  await expect(page).toHaveURL(/#\/tags\?tag=t10$/);
+  await search.fill('城市漫游');
+  await expect(panel.locator('[data-value="album:a1"]')).toBeVisible();
+  await panel.locator('[data-value="album:a1"]').click();
+  await expect(page.locator('h1')).toHaveText('城市漫游');
+});
+test('Enter, arrows, Escape, outside click and IME preserve input semantics', async ({ page }) => {
+  await page.goto('/#/library');
+  const search = input(page);
+  await search.fill('林夏');
+  await expect(page.locator('[data-value="model:m0"]')).toBeVisible();
+  await search.press('Enter');
+  await expect(page).toHaveURL(/#\/library\?q=/);
+  await expect(search).toHaveAttribute('aria-expanded', 'false');
+  await search.fill('城市漫游');
+  await expect(page.locator('[data-value="album:a1"]')).toBeVisible();
+  await search.press('ArrowDown');
+  await expect(page.locator('[data-value="album:a1"]')).toHaveAttribute('aria-selected', 'true');
+  await search.press('Enter');
+  await expect(page).toHaveURL(/#\/album\/a1$/);
+  await search.fill('城市');
+  await expect(page.locator('.search-suggestions')).toBeVisible();
+  await search.press('Escape');
+  await expect(page.locator('.search-suggestions')).not.toBeVisible();
+  await expect(search).toBeFocused();
+  await page.keyboard.press('Control+k');
+  await expect(page.locator('.search-suggestions')).toBeVisible();
+  await expect(search).toBeFocused();
+  await search.press('ArrowUp');
+  await expect(page.locator('[data-value="__search__"]')).toHaveAttribute('aria-selected', 'true');
+  await search.press('Home');
+  expect(await search.evaluate(element => (element as HTMLInputElement).selectionStart)).toBe(0);
+  await search.fill('海边');
+  await expect(page.locator('.search-suggestions')).toBeVisible();
+  await page.locator('.location-label').click();
+  await expect(page.locator('.search-suggestions')).not.toBeVisible();
+  const before = page.url();
+  await search.focus();
+  await search.dispatchEvent('compositionstart');
+  await search.fill('lin');
+  await search.press('Enter');
+  expect(page.url()).toBe(before);
+  await expect(page.locator('.search-suggestions')).not.toBeVisible();
+  await search.fill('林夏');
+  await search.dispatchEvent('compositionend', { data: '林夏' });
+  await expect(page.locator('[data-value="model:m0"]')).toBeVisible();
+});
+test('latest input, empty results, reduced motion and a narrow viewport', async ({ page }) => {
+  await page.goto('/#/library');
+  const search = input(page);
+  await search.fill('林夏');
+  await search.fill('城市');
+  await expect(page.locator('[data-value="tag:t10"]')).toBeVisible();
+  await expect(page.locator('[data-value="model:m0"]')).toHaveCount(0);
+  await search.fill('完全不存在的内容');
+  await expect(page.locator('.search-message')).toHaveText('没有找到匹配的内容');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  const animation = await page.locator('.search-suggestions').evaluate(element => ({ duration: getComputedStyle(element).animationDuration, transition: getComputedStyle(element.querySelector('[cmdk-list]')!).transitionDuration }));
+  expect(animation.duration).toBe('0s');
+  expect(animation.transition).toBe('0s');
+  await page.setViewportSize({ width: 900, height: 600 });
+  await search.fill('林夏');
+  await expect(page.locator('[data-value="model:m0"]')).toBeVisible();
+  const box = await page.locator('.search-suggestions').boundingBox();
+  expect(box!.x).toBeGreaterThanOrEqual(0);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(900);
+  expect(box!.y + box!.height).toBeLessThanOrEqual(600);
+  await search.fill('');
+  await expect(search).toHaveAttribute('aria-expanded', 'false');
+});
+test('desktop adapter ignores delayed stale responses and recovers from a read error', async ({ page }) => {
+  await page.addInitScript(() => {
+    const state = window as unknown as { __searchRequests: string[]; __searchFailure: boolean; __TAURI_INTERNALS__: { invoke: (command: string, args?: { query?: string }) => Promise<unknown> } };
+    state.__searchRequests = [];
+    state.__searchFailure = true;
+    state.__TAURI_INTERNALS__ = { invoke: async (command, args) => {
+      if (command === 'catalog_initialize') return false;
+      if (command === 'catalog_view') return { db: { version: 1, albums: [], media: [], models: [], tags: [], groups: [], recent: [], settings: { reducedMotion: true } }, page: 0, limit: 96, total: 0, albumTotal: 0, mediaTotal: 0, modelTotal: 0, mediaCount: 0 };
+      if (command === 'catalog_suggestions') {
+        const query = args!.query!;
+        state.__searchRequests.push(query);
+        await new Promise(resolve => setTimeout(resolve, query === '旧词' ? 400 : 20));
+        if (query === '失败' && state.__searchFailure) { state.__searchFailure = false; throw Error('Test read failure'); }
+        return [{ kind: 'album', id: query, name: `${query}候选`, detail: '' }];
+      }
+      throw Error(`Unexpected call ${command}`);
+    } };
+  });
+  await page.goto('/#/library');
+  const search = input(page);
+  await search.fill('旧词');
+  await expect.poll(() => page.evaluate(() => (window as unknown as { __searchRequests: string[] }).__searchRequests)).toContain('旧词');
+  await search.fill('新词');
+  await expect(page.locator('[data-value="album:新词"]')).toBeVisible();
+  await page.waitForTimeout(450); // Let the first request finish after the replacement.
+  await expect(page.locator('[data-value="album:旧词"]')).toHaveCount(0);
+  await expect(page.locator('[data-value="album:新词"]')).toBeVisible();
+  await search.fill('失败');
+  await expect(page.getByRole('alert')).toHaveText('暂时无法读取搜索结果');
+  await page.getByRole('option', { name: '重试', exact: true }).click();
+  await expect(page.locator('[data-value="album:失败"]')).toBeVisible();
+});

@@ -1,0 +1,46 @@
+.modal.wide.model-editor-modal {
+  max-height: calc(100dvh - 48px);
+}
+.model-editor-modal .dialog-layout {
+  max-height: calc(100dvh - 50px);
+}
+.model-editor-modal .dialog-content {
+  scrollbar-gutter: stable;
+}
+.model-editor-modal .profile-editor {
+  min-height: 0;
+  grid-template-rows: auto auto;
+}
+.model-editor-modal .editor-content > [data-panel-present] {
+  min-height: 365px;
+}
+.model-editor-modal .motion-panel-resizing {
+  max-height: calc(100dvh - 280px);
+  overflow: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+.model-editor-modal
+  .motion-panel-resizing
+  :is(.avatar-photo-scroll, .avatar-sources, .background-albums) {
+  margin-inline: 0;
+}
+.model-editor-tabs {
+  position: relative;
+  isolation: isolate;
+  flex-wrap: nowrap;
+}
+.model-editor-tabs > button {
+  position: relative;
+  z-index: 1;
+}
+.model-editor-selection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: 6px;
+  background: var(--jj-surface-hover);
+  pointer-events: none;
+}

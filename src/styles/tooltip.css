@@ -1,0 +1,39 @@
+.hover-hint {
+  z-index: var(--jj-z-tooltip);
+  max-width: min(320px, calc(100vw - 16px));
+  padding: 5px 9px;
+  border-radius: var(--jj-radius-control);
+  background: #fff;
+  color: #171717;
+  font: 12px/1.4 var(--jj-font);
+  font-weight: 400;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 14%);
+  pointer-events: none;
+  user-select: none;
+  transform-origin: var(--radix-tooltip-content-transform-origin);
+  --tw-enter-opacity: 0;
+  --tw-exit-opacity: 0;
+  --tw-enter-scale: .98;
+  --tw-exit-scale: .99;
+}
+.hover-hint:is([data-state="delayed-open"], [data-state="instant-open"]) {
+  @apply animate-in;
+  animation-duration: var(--jj-duration-fast);
+  animation-timing-function: var(--jj-ease-out);
+}
+.hover-hint[data-state="closed"] {
+  @apply animate-out;
+  animation-duration: var(--jj-duration-fast);
+  animation-timing-function: ease-in;
+}
+html[data-motion="reduced"] .hover-hint {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hover-hint {
+    animation: none;
+  }
+}

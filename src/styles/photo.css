@@ -1,0 +1,61 @@
+/* One shared static bitmap; no extra image nodes, timers or thumbnail jobs. */
+:where(.photo-frame) {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  object-fit: cover;
+}
+.photo-frame::before,
+.viewer-media-placeholder {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #f6f9fd url('/media/aure-placeholder.webp') center / contain no-repeat;
+  pointer-events: none;
+}
+.photo-frame[data-photo-state='ready']::before { display: none; }
+.cover-link .photo-frame,
+.album-fan .photo-frame,
+.media-open > .photo-frame { object-position: 50% 35%; }
+.photo-frame > img.photo-image {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  min-height: 0;
+  object-fit: inherit;
+  object-position: inherit;
+  border-radius: inherit;
+  box-shadow: none;
+}
+.photo-frame:not([data-photo-state='ready']) > img { visibility: hidden; }
+.photo-frame.photo-fallback { min-height: 0; }
+.photo-fallback > span,
+.photo-fallback > button { position: relative; }
+.photo-fallback > span {
+  margin-top: auto;
+  padding: 4px 8px;
+  background: rgb(246 249 253 / 92%);
+  border-radius: var(--jj-radius-control);
+}
+.photo-fallback > button { margin: 0 0 8px; }
+.model-card > .photo-frame {
+  width: 88px;
+  height: 88px;
+  min-height: 0;
+  border-radius: 50%;
+}
+.people-strip .model-card > .photo-frame { width: 62px; height: 62px; }
+.album-people .photo-frame { width: 24px; height: 24px; border-radius: 50%; }
+.viewer-media-placeholder { background-size: min(300px, 50%) auto; }
+.media-stage[data-media-state='loading'] > img,
+.media-stage[data-media-state='loading'] > video,
+.media-stage[data-media-state='error'] > img,
+.media-stage[data-media-state='error'] > video { visibility: hidden; }
+.viewer-loading-cover { position: absolute; inset: 0; object-fit: contain; }

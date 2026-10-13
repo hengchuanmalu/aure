@@ -1,0 +1,119 @@
+{
+  "generator": "scripts/generate-fixtures.mjs",
+  "version": 1,
+  "license": "MIT",
+  "files": [
+    {
+      "file": "media/p-1239291.jpg",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 114254,
+      "sha256": "de39429f7f249122e7d82d9b642eccfc42b6a6fabcf608673eef8052edffec91"
+    },
+    {
+      "file": "media/p-1536619.jpg",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 113594,
+      "sha256": "dcdefb4ef02351d6c11d1b9d55eadce419118b74a3587ef72e581676dec80b26"
+    },
+    {
+      "file": "media/p-1382731.jpg",
+      "width": 1600,
+      "height": 2400,
+      "bytes": 190266,
+      "sha256": "9edfc298f0dab4047ce79cd88630dad731d6e0db62a61e8225d2a9c4603b554f"
+    },
+    {
+      "file": "media/p-1462637.jpg",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 112489,
+      "sha256": "3b32536dcdd6613917657b1a11b98881e63bec877491d11595bc438bee7da137"
+    },
+    {
+      "file": "media/flower.jpg",
+      "width": 960,
+      "height": 540,
+      "bytes": 52583,
+      "sha256": "701d36b4e4158082f63e4ee5e2e72294e3bdd2a798ae7db3e54896e02a64a438"
+    },
+    {
+      "file": "media/p-1036623.jpg",
+      "width": 1600,
+      "height": 1068,
+      "bytes": 108968,
+      "sha256": "23826f3cfcddc3c7a686004a1f8d8c5ff36c6ac5b040db74cc610705f1f16415"
+    },
+    {
+      "file": "media/p-1542085.jpg",
+      "width": 1600,
+      "height": 1110,
+      "bytes": 116653,
+      "sha256": "d896ca2680574cbfc079ee435a11246d769f0dae5d2cc13d82b303aa736dc0cf"
+    },
+    {
+      "file": "media/p-1858175.jpg",
+      "width": 1600,
+      "height": 2400,
+      "bytes": 190029,
+      "sha256": "095a5ce4f2dcd569556891a1f8e492447951e731e68e27eca612f8f563847fd3"
+    },
+    {
+      "file": "media/flower-portrait.mp4",
+      "width": 304,
+      "height": 540,
+      "bytes": 380579,
+      "sha256": "0bfb9c0ae773edd61251bff491bc27e18bef8264bb7d965e7a804cd9d5438e8a"
+    },
+    {
+      "file": "media/p-733872.jpg",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 111902,
+      "sha256": "e384acb43174802721eaec2d461232e57aa1659f5234827261de2b99616267b9"
+    },
+    {
+      "file": "media/p-1553783.jpg",
+      "width": 1600,
+      "height": 2647,
+      "bytes": 218260,
+      "sha256": "08373cfa11f2c582a4c6554d779cab851fdedd0726124c8143487f12003f94f6"
+    },
+    {
+      "file": "media/flower-portrait.jpg",
+      "width": 304,
+      "height": 540,
+      "bytes": 32425,
+      "sha256": "b4aa949bd431a124ee053110eb2ed2371948a8ea9d24fea7e58036d68c6b4df8"
+    },
+    {
+      "file": "media/p-1181686.jpg",
+      "width": 1600,
+      "height": 2400,
+      "bytes": 206576,
+      "sha256": "7bcce54516a4acd52362b52a372702240894b3b7f86f2b046fc4c814383fa112"
+    },
+    {
+      "file": "media/p-762020.jpg",
+      "width": 1600,
+      "height": 1067,
+      "bytes": 115813,
+      "sha256": "b855f8bbbd36bdef72929bc892d2c2966c8f2d2ea6442139a325cffcf0a2e262"
+    },
+    {
+      "file": "media/p-774909.jpg",
+      "width": 1600,
+      "height": 2400,
+      "bytes": 192339,
+      "sha256": "d487f0bc88708e6ee224be213d14fc8f308839066ca6e7f171961ba2efa0fb70"
+    },
+    {
+      "file": "media/flower.mp4",
+      "width": 960,
+      "height": 540,
+      "bytes": 909151,
+      "sha256": "6df321688d60a60f9d907356984b52c9c319249cedb8ef6a7e3d51c2ead659cd"
+    }
+  ]
+}

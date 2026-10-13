@@ -1,0 +1,88 @@
+/* 镜集 design baseline 3.0 — 2026-09-28
+   CSS pixels; implementation defaults, not image-extracted measurements.
+   Import once. Shared with shadcn/ui semantic tokens. */
+:root {
+  color-scheme: light;
+  --jj-bg: #ffffff;
+  --jj-surface: #f7f7f7;
+  --jj-surface-hover: #eeeeee;
+  --jj-text: #262626;
+  --jj-text-secondary: #666666;
+  --jj-accent: #262626;
+  --jj-accent-hover: #404040;
+  --jj-accent-soft: #eeeeee;
+  --jj-border: #e5e5e5;
+  --jj-danger: #b42318;
+  --jj-success: #16734b;
+  --jj-overlay: rgb(16 24 40 / 38%);
+  --jj-font: "Segoe UI Variable", "Segoe UI", "Microsoft YaHei", sans-serif;
+  --jj-text-xs: 12px;
+  --jj-text-sm: 14px;
+  --jj-text-base: 16px;
+  --jj-text-lg: 22px;
+  --jj-text-xl: 26px;
+  --jj-text-hero: clamp(40px, 3.2vw, 48px);
+  --jj-line-body: 1.6;
+  --jj-line-title: 1.2;
+  --jj-space-1: 4px;
+  --jj-space-2: 8px;
+  --jj-space-3: 12px;
+  --jj-space-4: 16px;
+  --jj-space-6: 24px;
+  --jj-space-8: 32px;
+  --jj-space-12: 48px;
+  --jj-radius-control: 8px;
+  --jj-radius-pill: 999px;
+  --jj-radius-card: 12px;
+  --jj-radius-hero: 16px;
+  --jj-radius-avatar: 50%;
+  --jj-shadow-card: 0 2px 8px rgb(16 24 40 / 5%);
+  --jj-shadow-hover: 0 6px 18px rgb(16 24 40 / 10%);
+  --jj-shadow-dialog: 0 16px 48px rgb(16 24 40 / 18%);
+  --jj-dialog-width: 600px;
+  --jj-dialog-wide-width: 1280px;
+  --jj-dialog-viewport-inset: 48px;
+  --jj-focus-ring: 0 0 0 2px var(--jj-bg), 0 0 0 4px var(--jj-accent);
+  --jj-album-ratio: 3 / 2;
+  --jj-media-card-ratio: 3 / 2;
+  --jj-avatar-size: 96px;
+  --jj-avatar-compact: 88px;
+  --jj-sidebar-width: 72px;
+  --jj-sidebar-compact: 68px;
+  --jj-topbar-height: 64px;
+  --jj-duration-fast: 120ms;
+  --jj-duration-hover: 180ms;
+  --jj-duration-panel: 220ms;
+  --jj-duration-page: 240ms;
+  /* Exhibition recipes retain existing aure values; not personal global tokens. */
+  --jj-duration-fan: 380ms;
+  --jj-duration-cover: 350ms;
+  --jj-ease-exhibition: cubic-bezier(0.22, 1, 0.36, 1);
+  --jj-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --jj-album-hover-scale: 1.015;
+  --jj-video-hover-scale: 1;
+  --jj-z-content: 0;
+  --jj-z-hover: 10;
+  --jj-z-topbar: 20;
+  --jj-z-popover: 30;
+  --jj-z-backdrop: 40;
+  --jj-z-dialog: 50;
+  --jj-z-toast: 60;
+  --jj-z-tooltip: 120;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --jj-duration-fast: 0ms;
+    --jj-duration-hover: 0ms;
+    --jj-duration-panel: 0ms;
+    --jj-duration-page: 0ms;
+    --jj-album-hover-scale: 1;
+  }
+}
+:root[data-motion="reduced"] {
+  --jj-duration-fast: 0ms;
+  --jj-duration-hover: 0ms;
+  --jj-duration-panel: 0ms;
+  --jj-duration-page: 0ms;
+  --jj-album-hover-scale: 1;
+}

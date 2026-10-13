@@ -1,0 +1,30 @@
+.recommendation-carousel {
+  position: relative;
+  isolation: isolate;
+}
+.recommendation-carousel > .featured-grid[data-active="false"] {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  pointer-events: none;
+}
+.recommendation-carousel > .featured-grid[data-active="true"] { position: relative; z-index: 1; }
+.recommendation-carousel > .featured-grid[data-entering="true"] { z-index: 2; }
+.recommendation-carousel > .featured-grid[data-entering="true"] .cover-link {
+  animation: recommendation-settle var(--recommendation-duration, 800ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes recommendation-settle {
+  from { transform: scale(1.018); }
+  to { transform: scale(1); }
+}
+.recommendation-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.recommendation-actions .recommendation-refresh {
+  width: 28px;
+  height: 28px;
+  color: var(--jj-text-secondary);
+}
+.recommendation-refresh .lucide { width: 17px; height: 17px; }

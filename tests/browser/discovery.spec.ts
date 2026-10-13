@@ -1,0 +1,55 @@
+import { expect,test } from "../support/browser.fixture";
+
+test('discovery original covers and title-only caption reveal', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/');
+  await expect(page.getByRole('heading', { name: '推荐', exact: true })).toBeVisible();
+  await expect(page.getByText('在熟悉的收藏里，遇见新的心动。')).toHaveCount(0);
+  const card = page.locator('.featured-grid .album-card').first();
+  const caption = card.locator('.featured-caption');
+  const title = caption.locator('h3');
+  const count = caption.locator('small');
+  const image = card.locator('img');
+  await expect(image).toHaveAttribute('src', '/tests/fixtures/media/p-1239291.jpg');
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await expect(count).toHaveCSS('opacity', '0');
+  await title.hover();
+  await expect(count).toHaveCSS('opacity', '1');
+  await expect(title).toHaveCSS('transform', 'none');
+  await page.screenshot({ path: 'test-results/discovery-hover.png' });
+  await page.getByRole('heading', { name: '发现', exact: true }).hover();
+  await expect(count).toHaveCSS('opacity', '0');
+  await page.screenshot({ path: 'test-results/discovery-default.png' });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(title).toHaveCSS('transition-duration', '0s');
+  await caption.focus();
+  await expect(count).toHaveCSS('opacity', '1');
+  const favorite = card.getByRole('button', { name: /^(取消收藏|收藏) / });
+  const favoriteLabel = await favorite.getAttribute('aria-label');
+  await favorite.click();
+  await expect(favorite).not.toHaveAttribute('aria-label', favoriteLabel!);
+  await card.getByRole('button', { name: /更多操作$/ }).click();
+  await expect(page.getByRole('menuitem', { name: '编辑写真集' })).toBeVisible();
+  await expect(page.getByRole('menuitem', { name: '查看详情' })).toHaveCount(0);
+  await page.keyboard.press('Escape');
+  await caption.click();
+  await expect(page).toHaveURL(/#\/album\/a0$/);
+  expect(errors).toEqual([]);
+});
+
+test('homepage covers return ready at the same source and change with model filters', async ({ page }) => {
+  await page.goto('/');
+  const hero = page.locator('.featured-grid .cover-link img').first();
+  await expect.poll(() => hero.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  const src = await hero.getAttribute('src');
+  const nav = page.getByRole('navigation', { name: '主导航' });
+  await nav.getByRole('link', { name: '设置', exact: true }).click();
+  await expect(page.locator('h1')).toHaveText('设置');
+  await nav.getByRole('link', { name: '发现', exact: true }).click();
+  await expect(hero).toHaveAttribute('src', src!);
+  await expect.poll(() => hero.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await page.locator('.model-filters button').nth(2).click();
+  await expect(hero).not.toHaveAttribute('src', src!);
+  await expect.poll(() => hero.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+});
