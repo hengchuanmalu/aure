@@ -44,6 +44,6 @@ cargo test --locked --manifest-path src-tauri/Cargo.toml
 2. 在 GitHub 创建空仓库，从已复核的候选目录建立新的 Git 历史，勿拷入旧 `.git`。
 3. 显式授权后再提交与推送；本地准备命令不会执行这些操作。
 4. 启用私密漏洞报告，检查 Actions 结果和仓库安全设置；需要时设置默认分支保护。
-5. README 展示图和首个 Release 单独验收，目前不自动发布安装包。
+5. README 展示图与 Release 附件分别验收；只有明确要求发布时才上传。`npm run desktop:package` 生成 Windows x64 exe 与 NSIS 安装程序，不执行上传。安装包与直接运行版应包含第三方声明，上传前核对源码提交、程序哈希、版本和验收范围；exe 放在 Release 附件中，不提交到源码仓库。
 
 建议首发仓库描述：`Windows 本地优先的写真、图片与视频管理应用，基于 React、Tauri 和 SQLite。`

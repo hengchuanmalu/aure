@@ -11,7 +11,7 @@ function Get-ContentHash([string]$Path) {
 
 # Installation and native acceptance must use exactly the same build inputs.
 $directories = @('src', 'public', 'src-tauri/src', 'src-tauri/icons', 'src-tauri/capabilities', 'design/tokens')
-$files = @('package.json', 'package-lock.json', 'index.html', 'tsconfig.json', 'vite.config.ts', 'scripts/check-boundaries.mjs', 'scripts/check-performance.mjs', 'scripts/check-size.mjs', 'scripts/build-fingerprint.ps1', 'src-tauri/Cargo.toml', 'src-tauri/Cargo.lock', 'src-tauri/tauri.conf.json', 'src-tauri/build.rs')
+$files = @('package.json', 'package-lock.json', 'index.html', 'tsconfig.json', 'vite.config.ts', 'scripts/check-boundaries.mjs', 'scripts/check-performance.mjs', 'scripts/check-size.mjs', 'scripts/build-fingerprint.ps1', 'src-tauri/Cargo.toml', 'src-tauri/Cargo.lock', 'src-tauri/tauri.conf.json', 'src-tauri/build.rs', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'resources/third-party-licenses.txt')
 $inputs = @(
     foreach ($directory in $directories) { Get-ChildItem -LiteralPath (Join-Path $ProjectRoot $directory) -File -Recurse }
     foreach ($file in $files) { Get-Item -LiteralPath (Join-Path $ProjectRoot $file) }

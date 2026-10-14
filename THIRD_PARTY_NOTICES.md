@@ -14,7 +14,7 @@
 | 测试图片和视频 | 由 `scripts/generate-fixtures.mjs` 生成的几何图案，随项目采用 MIT | `tests/fixtures/README.md`、`provenance.json` |
 | aure 图标和品牌图 | 项目专用图像；本地生成记录为 imagegen，平台图标由 Tauri CLI 导出 | `resources/`、`src-tauri/icons/`、`public/brand.*`、`public/favicon.ico` |
 
-运行时及开发依赖版本保存在 `package-lock.json` 和 `src-tauri/Cargo.lock`，完整依赖许可清单由开源准备命令生成在候选目录的 `docs/dependency-licenses.json`。该清单是包元数据核对，不是完整法律意见；发布二进制前还应整理其实际链接依赖的许可证全文与声明。
+运行时及开发依赖版本保存在 `package-lock.json` 和 `src-tauri/Cargo.lock`，依赖许可清单由开源准备命令生成在候选目录的 `docs/dependency-licenses.json`。`npm run licenses:generate` 根据已安装的 npm 运行时依赖及 Cargo Windows 依赖图，整理上游版权声明、包版本、源码链接和许可证全文到 `resources/third-party-licenses.txt`；原生构建依赖一并保留，收录不表示每个包都链接进程序。安装版将声明放在 `licenses/`，直接运行版压缩包也提供副本，重新分发时应保留。
 
 清单中存在仅适用于对应依赖的其他许可，例如构建依赖 caniuse-lite 的 CC-BY-4.0、lightningcss 及部分 Rust 依赖的 MPL-2.0、Unicode 数据的 Unicode-3.0。不要将这些上游文件重新标注为 MIT；分发其源码、数据或实际链接的二进制时按对应条款保留声明与来源。
 

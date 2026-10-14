@@ -30,7 +30,27 @@
     }
   },
   "bundle": {
-    "active": false,
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "hengchuanmalu",
+    "shortDescription": "Windows 本地优先的图片与视频管理应用",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
+    "resources": {
+      "../resources/third-party-licenses.txt": "licenses/THIRD_PARTY_LICENSES.txt",
+      "../THIRD_PARTY_NOTICES.md": "licenses/THIRD_PARTY_NOTICES.md",
+      "../LICENSE": "licenses/LICENSE.txt"
+    },
+    "windows": {
+      "minimumWebview2Version": "111.0.0.0",
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": false },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"],
+        "displayLanguageSelector": true,
+        "compression": "lzma"
+      }
+    },
     "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"]
   }
 }

@@ -17,6 +17,8 @@
     "verify": "npm run build && npm run check:performance && npm run check:size && npm test",
     "verify:release": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-release.ps1",
     "desktop:build-test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-test-app.ps1",
+    "licenses:generate": "node scripts/generate-release-notices.mjs",
+    "desktop:package": "npm run licenses:generate && tauri build --bundles nsis && npm run check:size -- --desktop",
     "test:native:release": "node scripts/test-native-release.mjs",
     "test:install-backups": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/unit/install-backups.ps1",
     "check:webview2": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-webview2.ps1",
